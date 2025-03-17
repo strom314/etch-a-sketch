@@ -1,11 +1,11 @@
 const container = document.querySelector("#container");
 const canvasDivs = [];
 
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < 255; i++) {
     let canvasDiv = document.createElement("div");
 
-    canvasDiv.style.backgroundColor = "blue";
-    canvasDiv.classList = "canvas-square";
+    canvasDiv.classList.add("canvas-div");
+    canvasDiv.textContent = "a";
 
     canvasDivs.push(canvasDiv);
 }

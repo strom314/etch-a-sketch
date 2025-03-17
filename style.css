@@ -3,8 +3,8 @@
     border-radius: 8px;
     background-color: rgb(174, 95, 107);
 
-    width: 600px;
-    height: 450px;
+    width: 512px;
+    height: 512px;
 
     display: flex;
     flex-wrap: wrap;
@@ -14,4 +14,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.canvas-div{
+    width: 31px;
+    height: 31px;
+    flex: auto;
+    border: 1px solid black;
+    
 }
