@@ -1,15 +1,25 @@
 const container = document.querySelector("#container");
-const canvasDivs = [];
+const rows = [];
 
-for (let i = 0; i < 255; i++) {
-    let canvasDiv = document.createElement("div");
 
-    canvasDiv.classList.add("canvas-div");
-    canvasDiv.textContent = "a";
+let canvasSize = 5;
 
-    canvasDivs.push(canvasDiv);
+
+
+for (let i = 0; i < canvasSize; i++) {
+    let row = document.createElement("div");
+    row.classList.add("row");
+
+    for (let j = 0; j < canvasSize; j++) {
+        let square = document.createElement("div");
+        square.classList.add("square");
+
+        row.appendChild(square);
+    }
+    
+    rows.push(row);
 }
 
-canvasDivs.forEach(div => {
-    container.appendChild(div);
+rows.forEach(row => {
+    container.appendChild(row);
 });
