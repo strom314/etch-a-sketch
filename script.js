@@ -1,8 +1,10 @@
 const container = document.querySelector("#container");
+const restart = document.querySelector("#restart"); 
 const rows = [];
 const squares = [];
 
 let canvasSize = 16;
+
 
 for (let i = 0; i < canvasSize; i++) {
   let row = document.createElement("div");
@@ -13,7 +15,7 @@ for (let i = 0; i < canvasSize; i++) {
     square.classList.add("square");
 
     square.addEventListener("mouseenter", (e) => {
-      e.target.style.backgroundColor = "blue";
+      e.target.style.backgroundColor = getRandomColor();
       console.log("cc");
     });
 
@@ -27,3 +29,19 @@ for (let i = 0; i < canvasSize; i++) {
 rows.forEach((row) => {
   container.appendChild(row);
 });
+
+
+restart.addEventListener("click", () => {
+  
+});
+
+
+function getRandomColor() {
+  const hex = "1234567890ABCDEF";
+  let color = "#";
+
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
