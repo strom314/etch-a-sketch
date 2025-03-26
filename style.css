@@ -1,13 +1,10 @@
 #container{
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
 
     height: 500px;
     width:  500px;
 
-    /* max-width: 500px;
-    max-height: 500px;  */
 }
 
 body{
@@ -23,14 +20,13 @@ body{
 
 .row{
     flex: 1;
-    margin: 1px;
     display: flex;
 }
 
 .square{
     flex: 1;
     border: 1px solid black;
-    margin: 1px;
+    border-radius: 2px;
 }
 
 .top{
@@ -46,8 +42,25 @@ body{
 
 }
 
+input{
+    width: 20px;
+}
+
 .center{
     display: flex;
     justify-content: center;
+}
 
+.block{
+    display: block;
+}
+
+.space{
+    gap: 40px;
+}
+
+.undertext{
+    margin: 0;
+    margin-top: 20px;
+    display: inline-block;
 }
