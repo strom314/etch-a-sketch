@@ -2,7 +2,6 @@ const container = document.querySelector("#container");
 const restart = document.querySelector("#restart");
 
 const rowsInput = document.querySelector("#rows");
-const columnsInput = document.querySelector("#columns");
 
 let rows = [];
 let squares = [];
@@ -14,6 +13,10 @@ renderRows();
 
 restart.addEventListener("click", () => {
   canvasSize = Number(rowsInput.value);
+  if (canvasSize > 100) {
+    canvasSize = 100;
+    rowsInput.value = 100;
+  }
   rows = [];
   squares = [];
 
@@ -43,8 +46,8 @@ function generateGrid(canvasSize) {
       square.classList.add("square");
 
       square.addEventListener("mouseenter", (e) => {
-        e.target.style.backgroundColor = getRandomColor();
-        console.log("cc");
+        let color = getRandomColor();
+        e.target.style.backgroundColor = color;
       });
 
       row.appendChild(square);
@@ -62,11 +65,10 @@ function renderRows() {
 }
 
 function getRandomColor() {
-  const hex = "1234567890ABCDEF";
-  let color = "#";
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
+  let color = `rgba(${red},${green},${blue},0.5)`;
 
-  for (let i = 0; i < 6; i++) {
-    color += hex[Math.floor(Math.random() * 16)];
-  }
   return color;
 }
